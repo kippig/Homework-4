@@ -15,4 +15,5 @@ quadratic_primes(-5,10, 10^50)
 #0 primes
 quadratic_primes(3,7,10^100)
 #
+print 'Obviously, if b = 0, then f(x) = x^2 + ax = x(x+a), which is composite.'
 print 'My conjecture is that this set is indeed infinite for x^2 + x + 1.' 
