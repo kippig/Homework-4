@@ -12,8 +12,8 @@ def quadratic_primes(a=1, b=1, count = 100):
 quadratic_primes(10^200)
 # 29/10000 = .29% primes!
 quadratic_primes(-5,10, 10^50)
-#0 primes
-quadratic_primes(3,7,10^100)
-#
+# 0 primes, why is that?
+# after some investigation, it's because b and a have different parity.
 print 'Obviously, if b = 0, then f(x) = x^2 + ax = x(x+a), which is composite.'
-print 'My conjecture is that this set is indeed infinite for x^2 + x + 1.' 
+print 'If a and b have different parity, then x^2 + ax + b is always composite. Proof is by cases, and left as an excercise for the grader'
+print 'My conjecture is that this set is indeed infinite for x^2 + x + 1, this is also my conjecture for other polynomials not addressed above.' 
