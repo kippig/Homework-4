@@ -1,0 +1,30 @@
+"""Notes: it takes about 3-4 seconds for 50k iterations, doing 1 million will take significantly more time, not recommended.
+Pretty cool assignment.
+There is a small inacurracy, the primes are shifted over 3 to the left"""
+
+
+%cython
+from pylab import *
+from sage.all import Primes
+def primes_mod_four(unsigned int iterations = 10000):
+    matplotlib.pyplot.clf()
+    cdef int f = 0, i
+    P = Primes()
+    cdef output = [], x_axis = []
+    for i in range(3, iterations):
+        Pth = P.unrank(i)
+        if Pth%4 == 1:
+            f = f + 1
+        else:
+            f = f - 1
+        # this was for if you want to know where it crosses the axis
+        #if f == 0 or f==1 or f==-1:
+        #    print str(Pth) + ', ' + str(i) + ', ' + str(f)
+        output.append(f)
+        x_axis.append(0)
+    matplotlib.pyplot.plot(output)
+    matplotlib.pyplot.plot(x_axis)
+    matplotlib.pyplot.savefig('Chebyshev_variance.png')
+    return
+
+primes_mod_four(iterations = 50000)
